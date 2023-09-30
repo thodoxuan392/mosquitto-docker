@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.17
+    container_name: mosquitto
+    volumes:
+      - ./config:/mosquitto/config
+      - ./log:/mosquitto/log
+      - ./data:/mosquitto/data
+
+networks:
+  default:
+    name: mosquitto_network
+    external: true
